@@ -307,6 +307,35 @@
 			return Array_Of_Objects;
 		}
 
+		function setupFilterEventListener() {
+			var FilterChange_Dimensions = [];
+			
+			// Once the settings change populate global variables from the settings.
+			worksheetName = tableau.extensions.settings.get("worksheet");
+			
+			// If settings are changed we will unregister and re register the listener.
+			if (unregisterFilterEventListener != null) {
+				unregisterFilterEventListener();
+			}
+			// Get worksheet
+			worksheet = tableau.extensions.dashboardContent.dashboard.worksheets.find(function (sheet) {
+				return sheet.name===worksheetName;
+			});
+			for(var key in dict_Settings) {
+				var value = dict_Settings[key];
+				if (key.startsWith('FilterChangeFieldName_')){
+					FilterChange_Dimensions.push(value);
+				}
+			}
+			if(worksheetName != null) {
+				// Add filter change event listener
+				unregisterFilterEventListener = worksheet.addEventListener(tableau.TableauEventType.FilterChanged, (filterEvent) => {
+					//if (FilterChange_Dimensions.includes(filterEvent.fieldName)) {
+					getData_to_D3();
+					//}
+				});
+			}
+		}
 
 
 	})();		
