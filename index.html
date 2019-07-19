@@ -162,7 +162,8 @@
 			console.log('----- Display Tableau_Array_of_Objects -----', Tableau_Array_of_Objects);	// Debug output
 			
             		//draw_D3(sankeyData);
-            		draw_D3();
+            		//draw_D3();
+			draw_D3(Tableau_Array_of_Objects);
             
 		});
 		}
@@ -184,11 +185,12 @@
 			});
 		}
 		
-		function draw_D3() {
+		function draw_D3(array_TableauData ) {
 		  /*maxValue = d3.select('#maximum')
 		      .node()
 		      .value;*/
 		  var maxValue = 100; //07.19.19
+		  console.log('DebugTableau Data: ', array_TableauData);
 
 
 		  //var exampleData = createRandomData(maxValue);
