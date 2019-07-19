@@ -172,7 +172,7 @@
 		
 		// This opens the configuration window.
 		function configure() {
-			const popupUrl = `https://mantsui.github.io/Ext_D3_Sankey/configdialog`;
+			const popupUrl = `https://mantsui.github.io/Hack_D3_Bar_Anime/configdialog`;
 			let defaultPayload = "";
 			tableau.extensions.ui.displayDialogAsync(popupUrl, defaultPayload, { height:700, width:500 }).then((closePayload) => {
 				getData_to_D3(); // 03.30.19 test code
