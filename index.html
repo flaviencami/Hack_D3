@@ -120,7 +120,7 @@
 		// reference.
 		
 		var sheetName = tableau.extensions.settings.get("worksheet");
-		sheetName = 'Tabulated Data US Census'; //07.19.19 Temp Code
+		//sheetName = 'Tabulated Data US Census'; //07.19.19 Temp Code
 		dict_Settings = tableau.extensions.settings.getAll();
 		console.log('dict_Settings: ', dict_Settings);
 		if (sheetName == undefined || sheetName =="" || sheetName == null) {
@@ -200,7 +200,6 @@
 		  yscale.domain([0, maxValue]);
 
 		  var bars = svg.selectAll(".bar")
-		      //.data(exampleData);
 		      .data(Y_Data);
 
 		  bars
@@ -222,7 +221,6 @@
 		      })
 		      .attr("width", xscale.bandwidth())
 		      .attr("x", function(d, i) {
-			  //return xscale(i);
 			  return xscale(X_Data[i]);
 		      })
 
