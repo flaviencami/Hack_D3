@@ -357,13 +357,13 @@
 		}
 	    }
 	    // Debug
-	    /*console.log('Debug extension settings loaded: ');
+	    console.log('Debug extension settings loaded: ');
 	    var debugSettings = tableau.extensions.settings.getAll();
 	    for(var key in debugSettings) {
 		console.log(key, ': ', debugSettings[key]);
 	    }
 
-	    window.alert( "Debug setting values: \n" + debugSettings );*/
+	    window.alert( "Debug setting values: \n" + debugSettings );
 
 	    tableau.extensions.settings.saveAsync().then((currentSettings) => {
 	      tableau.extensions.ui.closeDialog("10");
@@ -432,7 +432,7 @@
 
 	  function create_Filter_Dropdown_Lists(arrayFieldList){
 
-		for (var index = 0; index < arrayFieldList.length; index++){
+		for (var index = 0; index < 1; index++){
 			
 			var RowID = 'FilterRowID_' + index;
 			var SecondDivID = 'FilterSecondDivID_' + index;
@@ -612,12 +612,12 @@
 			}
 
 			// Check to see all Dimension dropdowns have been completed.
-			for (var index = 0; index < arrayFieldList.length; index++){
+			/*for (var index = 0; index < arrayFieldList.length; index++){
 				var SelectID = '#selectField_' + index;
 				if( $(SelectID).val() == null ){
 					isCompleted = 'False';
 				}
-			}
+			}*/
 			
 			if( isCompleted == 'True' ){
 				$("#save").prop('disabled', false);	// Enable save button
