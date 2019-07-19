@@ -140,8 +140,9 @@
 		});
 					
 		var strMeasureName = tableau.extensions.settings.get("MeasureName");
-		strMeasureName = 'SUM(2010 Census)';
-		var strDimensionName = 'City';
+		//strMeasureName = 'SUM(2010 Census)';
+		var strDimensionName = tableau.extensions.settings.get("FieldName_0");
+		//var strDimensionName = 'City';
 		var regExp = /\(([^)]+)\)/;
 		var regExpMatches = regExp.exec(strMeasureName);
 		//matches[1] contains the value between the parentheses
