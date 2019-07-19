@@ -192,30 +192,27 @@
 		      .node()
 		      .value;*/
 		  var maxValue = 100; //07.19.19
-		  console.log('Debug Tableau Data: ', array_TableauData);
+		console.log('Debug Tableau Data: ', array_TableauData);
 		console.log('Debug TargetDimension: ', TargetDimension);
 		console.log('Debug TargetMeasure: ', TargetMeasure);
 
-
-		  //var exampleData = createRandomData(maxValue);
-		  //console.log('Debug exampleData: ', exampleData);
-		  var TestYData = [10, 100, 20, 30];
-		  var TestXData = ['A','B','C','D'];
+		  var Y_Data = [10, 100, 20, 30];
+		  var X_Data = ['A','B','C','D'];
 
 		  //maxValue = d3.max(exampleData);
-		  maxValue = d3.max(TestYData);
+		  maxValue = d3.max(Y_Data);
 
 		  //xscale.domain(d3.range(exampleData.length));
 		  //xscale.domain(d3.range(4));
 		  //console.log('Test Debug: d3.range(4): ', d3.range(4));
 		  //xscale.domain([0,1,2,3]);
-		  xscale.domain(TestXData);
+		  xscale.domain(X_Data);
 
 		  yscale.domain([0, maxValue]);
 
 		  var bars = svg.selectAll(".bar")
 		      //.data(exampleData);
-		      .data(TestYData);
+		      .data(Y_Data);
 
 		  bars
 		      .enter()
@@ -237,7 +234,7 @@
 		      .attr("width", xscale.bandwidth())
 		      .attr("x", function(d, i) {
 			  //return xscale(i);
-			  return xscale(TestXData[i]);
+			  return xscale(X_Data[i]);
 		      })
 
 
@@ -251,7 +248,7 @@
 
 		  var labels = svg.selectAll('.label')
 		      //.data(exampleData);
-		      .data(TestYData);
+		      .data(Y_Data);
 
 		  var new_labels = labels
 		      .enter()
