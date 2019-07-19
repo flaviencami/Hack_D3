@@ -108,7 +108,6 @@
 				//07.19.19 });
 			}, function () { console.log('Error while Initializing: ' + err.toString()); });
 		});
-		//draw_D3();
 		
 		function getData_to_D3() {
 			
@@ -188,36 +187,16 @@
 		}
 		
 		function draw_D3(array_TableauData, TargetDimension, TargetMeasure) {
-		  /*maxValue = d3.select('#maximum')
-		      .node()
-		      .value;*/
-		  var maxValue = 100; //07.19.19
-		console.log('Debug Tableau Data: ', array_TableauData);
-		console.log('Debug TargetDimension: ', TargetDimension);
-		console.log('Debug TargetMeasure: ', TargetMeasure);
-
-		  //var Y_Data = [10, 100, 20, 30];
-		  //var X_Data = ['A','B','C','D'];
 		  var Y_Data = [];
 		  var X_Data = [];
 		  array_TableauData.forEach(function(element) {
 			X_Data.push(element[TargetDimension]);
-			Y_Data.push(element[TargetMeasure]);
-			  
-			console.log('Debug element: ', element);
-			console.log('Debug Dimen element', element[TargetDimension]);
-			console.log('Debug Measure element', element[TargetMeasure]);
+			Y_Data.push(element[TargetMeasure]);			  
 		  });
 			
-		  //maxValue = d3.max(exampleData);
-		  maxValue = d3.max(Y_Data);
+		  var maxValue = d3.max(Y_Data);
 
-		  //xscale.domain(d3.range(exampleData.length));
-		  //xscale.domain(d3.range(4));
-		  //console.log('Test Debug: d3.range(4): ', d3.range(4));
-		  //xscale.domain([0,1,2,3]);
 		  xscale.domain(X_Data);
-
 		  yscale.domain([0, maxValue]);
 
 		  var bars = svg.selectAll(".bar")
