@@ -108,7 +108,7 @@
 				//07.19.19 });
 			}, function () { console.log('Error while Initializing: ' + err.toString()); });
 		});
-		draw_D3();
+		//draw_D3();
 		
 		function getData_to_D3() {
 			
@@ -161,8 +161,8 @@
 			var Tableau_Array_of_Objects = ReduceToObjectTablulated(sumdata);
 			console.log('----- Display Tableau_Array_of_Objects -----', Tableau_Array_of_Objects);	// Debug output
 			
-            //draw_D3(sankeyData);
-            //draw_D3();
+            		//draw_D3(sankeyData);
+            		draw_D3();
             
 		});
 		}
@@ -184,17 +184,7 @@
 			});
 		}
 		
-		// Passing uniqueElementCount to help with the color contrast
-		//function draw_D3(dataInput){
-			//console.log('Drawing');
-			//update();
-
-		//} // function draw_D3(data) block end
-
-		//function update() {
 		function draw_D3() {
-
-		  console.log('Drawing 2xxx');
 		  /*maxValue = d3.select('#maximum')
 		      .node()
 		      .value;*/
