@@ -420,7 +420,8 @@
 			addElement(RowID,'div','col-md-6 col-xs-6',SecondDivID,'');
 			
 			// Loop through all the dimension fields and populate the drop downs.
-			addElement(SecondDivID,'span','dropdown-label',ListID,'Select Category # ' + index);
+			//addElement(SecondDivID,'span','dropdown-label',ListID,'Select Dimension # ' + index);
+			addElement(SecondDivID,'span','dropdown-label',ListID,'Select Dimension');
 			addElement(ListID,'select','select',SelectID,'');
 			$('#' + SelectID).append('<option disabled selected="selected">-- None Selected --</option>');
 
@@ -603,7 +604,7 @@
 		document.getElementsByClassName('select').onchange = function () {
 			var isCompleted = 'True';
 			
-			if( $("#selectWorksheet").val() == null ){
+			/*if( $("#selectWorksheet").val() == null ){
 				isCompleted = 'False';
 			}
 			
@@ -612,7 +613,7 @@
 			}
 
 			// Check to see all Dimension dropdowns have been completed.
-			/*for (var index = 0; index < arrayFieldList.length; index++){
+			for (var index = 0; index < arrayFieldList.length; index++){
 				var SelectID = '#selectField_' + index;
 				if( $(SelectID).val() == null ){
 					isCompleted = 'False';
