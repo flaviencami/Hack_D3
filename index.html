@@ -196,12 +196,14 @@
 		console.log('Debug TargetDimension: ', TargetDimension);
 		console.log('Debug TargetMeasure: ', TargetMeasure);
 
-		  var Y_Data = [10, 100, 20, 30];
-		  var X_Data = ['A','B','C','D'];
-		  //var Y_Data = [];
-		  //var X_Data = [];
+		  //var Y_Data = [10, 100, 20, 30];
+		  //var X_Data = ['A','B','C','D'];
+		  var Y_Data = [];
+		  var X_Data = [];
 		  array_TableauData.forEach(function(element) {
-			
+			X_Data.push(element[TargetMeasure]);
+			Y_Data.push(element[TargetDimension]);
+			  
 			console.log('Debug element: ', element);
 			console.log('Debug Dimen element', element[TargetDimension]);
 			console.log('Debug Measure element', element[TargetMeasure]);
