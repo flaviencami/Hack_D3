@@ -99,13 +99,13 @@
 			// Added new code here to point to the configure function.
 			tableau.extensions.initializeAsync({ 'configure':configure }).then(function () {
 				getData_to_D3();
-				//07.19.19 setupFilterEventListener();
+				setupFilterEventListener();
 				
 				// Add settings listener here
 				// Help refresh the chart upon save from configuration dialog
-				//07.19.19 unregisterSettingsEventListener = tableau.extensions.settings.addEventListener(tableau.TableauEventType.SettingsChanged, (settingsEvent) => {
-					//07.19.19 getData_to_D3();
-				//07.19.19 });
+				unregisterSettingsEventListener = tableau.extensions.settings.addEventListener(tableau.TableauEventType.SettingsChanged, (settingsEvent) => {
+					getData_to_D3();
+				});
 			}, function () { console.log('Error while Initializing: ' + err.toString()); });
 		});
 		
