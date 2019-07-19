@@ -77,17 +77,18 @@
 		// reference.
 		
 		var sheetName = tableau.extensions.settings.get("worksheet");
+		sheetName = 'Tabulated Data US Census'; //07.19.19 Temp Code
 		dict_Settings = tableau.extensions.settings.getAll();
 		console.log('dict_Settings: ', dict_Settings);
-		//07.19.19 if (sheetName == undefined || sheetName =="" || sheetName == null) {
-			//07.19.19 $("#configure").show();
-			//07.19.19 configure();
+		if (sheetName == undefined || sheetName =="" || sheetName == null) {
+			$("#configure").show();
+			configure();
 			// Exit the function if no worksheet name is present !!!
-			//07.19.19 return;
-		//07.19.19 } else {
+			return;
+		} else {
 			// If a worksheet is selected, then we hide the configuration screen.
-			//07.19.19 $("#configure").hide();
-		//07.19.19 }
+			$("#configure").hide();
+		}
 			
 		// Use the worksheet name saved in the Settings to find and return
 		// the worksheet object.
