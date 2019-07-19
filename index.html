@@ -141,6 +141,8 @@
 		});
 					
 		var strMeasureName = tableau.extensions.settings.get("MeasureName");
+		strMeasureName = 'SUM(2010 Census)';
+		var strDimensionName = 'City';
 		var regExp = /\(([^)]+)\)/;
 		var regExpMatches = regExp.exec(strMeasureName);
 		//matches[1] contains the value between the parentheses
@@ -163,7 +165,7 @@
 			
             		//draw_D3(sankeyData);
             		//draw_D3();
-			draw_D3(Tableau_Array_of_Objects);
+			draw_D3(Tableau_Array_of_Objects, strDimensionName, strMeasureName);
             
 		});
 		}
@@ -185,12 +187,14 @@
 			});
 		}
 		
-		function draw_D3(array_TableauData ) {
+		function draw_D3(array_TableauData, TargetDimension, TargetMeasure) {
 		  /*maxValue = d3.select('#maximum')
 		      .node()
 		      .value;*/
 		  var maxValue = 100; //07.19.19
-		  console.log('DebugTableau Data: ', array_TableauData);
+		  console.log('Debug Tableau Data: ', array_TableauData);
+		console.log('Debug TargetDimension: ', TargetDimension);
+		console.log('Debug TargetMeasure: ', TargetMeasure);
 
 
 		  //var exampleData = createRandomData(maxValue);
